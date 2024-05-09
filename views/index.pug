@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  a(href="/new") Write a new message
+  p Welcome to #{title}
+  p See #{messages.length} messages! 
+
+  ul 
+    each val, index in messages
+      li 
+        h3 #{index+1}. Message from #{val.user}
+        p #{val.text} 
+        p Date added : #{val.added} 
